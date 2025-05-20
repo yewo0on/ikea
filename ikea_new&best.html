@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IKEA - New & Best</title>
+  <title>이케아 서브페이지</title>
   <link rel="stylesheet" href="css/ikea_new&best.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon" />
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
@@ -12,6 +12,10 @@
     <script>
   // header 서브메뉴 슬라이드
   $(document).ready(function(){
+    // header, footer 파일 가져오기
+    $("#header").load("../header.html");
+    $("#footer").load("../footer.html");
+
     $("nav").mouseenter(function() {
       $(".lnb").stop().slideDown(200);
       $("nav").addClass("on");
@@ -39,76 +43,7 @@
   </script>
 </head>
 <body>
-  <div id="header">
-    <div class="header_wrap">
-      <h1 class="hd_logo">
-        <a href="index.html"><img src="images/logo.png" alt="IKEA 글자가 써 있는 로고 이미지"></a>
-      </h1>
-      <nav>
-        <ul class="gnb">
-          <li class="hd_menu">
-            <a href="#">모든 제품</a>
-            <ul class="lnb">
-              <li><a href="#">침대/매트리스</a></li>
-              <li><a href="#">소파 및 암체어</a></li>
-              <li><a href="#">수납 가구</a></li>
-            </ul>
-          </li>
-          <li class="hd_menu">
-            <a href="ikea_new&best.html">새로운 제품</a>
-            <ul class="lnb">
-              <li><a href="#">아웃도어/야외용품</a></li>
-              <li><a href="#">가구</a></li>
-              <li><a href="#">침대/매트리스</a></li>
-            </ul>
-          </li>
-          <li class="hd_menu">
-            <a href="ikea_special.html">특별한 가격</a>
-            <ul class="lnb">
-              <li><a href="#">더 낮은 새로운 가격</a></li>
-              <li><a href="#">이달의 IKEA Family</a></li>
-              <li><a href="#">리퍼브 제품 특가</a></li>
-            </ul>
-          </li>
-          <li class="hd_menu">
-            <a href="ikea_idea.html">아이디어</a>
-            <ul class="lnb">
-              <li><a href="#">주제별 홈퍼니싱</a></li>
-              <li><a href="#">공간별 홈퍼니싱</a></li>
-              <li><a href="#">홈퍼니싱 스타일</a></li>
-            </ul>
-          </li>
-          <li class="hd_menu">
-            <a href="#">더 보기</a>
-            <ul class="lnb">
-              <li><a href="#">매장안내</a></li>
-              <li><a href="#">이케아 푸드</a></li>
-              <li><a href="#">IKEA Family 멤버십</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <div class="nav_right">
-        <form action="" name="search" class="search">
-          <input type="text" name="search_input" id="search_input">
-          <button class="search_btn">
-            <span class="material-symbols-outlined nav_icon">search</span>
-          </button>
-        </form>
-        <ul class="sns">
-          <li class="mypage">
-            <a href="#"><span class="material-symbols-outlined nav_icon person_icon">person</span></a>
-          </li>
-          <li class="wishList">
-            <a href="#"><span class="material-symbols-outlined nav_icon ">heart_plus</span></a>
-          </li>
-          <li class="cart">
-            <a href="#"><span class="material-symbols-outlined nav_icon">shopping_bag</span></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <div id="header"></div>
   <!-- ------------------------------------------------------- -->
   <div id="section">
     <div class="stock">
@@ -187,7 +122,7 @@
           <li><span id="m"></span><br>mins</li>
           <li><span id="s"></span><br>secs</li>
         </ul>
-        <button class="watch_bt"><a href="#">button</a></button>
+        <button class="watch_bt"><a href="ikea_special.html">더 알아보기</a></button>
         <div class="chiar_bg"></div>
                 <div class="circle2"></div>
       </div>
@@ -254,57 +189,7 @@
     </div>
   </div>
   <!-- --------------------------------------------------------------- -->
-  <div id="footer">
-    <div class="ad_txt">
-      <address>이케아코리아 유한회사<br>
-        주소: (우) 14352 경기도 광명시 일직로 17, 1층(일직동) 이케아 광명점<br>
-        사업자 등록번호: 106-86-82871 사업자정보확인<br>
-        대표자: 이사벨 푸치 팔렘<br>
-        통신판매업 신고: 2018-경기광명-0209<br>
-        고객지원센터: 1670-4532</address>
-      <p>© Inter IKEA Systems B.V 1999-2025</p>
-    </div>
-    <div class="right_fnb">
-      <ul class="fnb">
-        <li>
-          <a href="#">고객문의</a>
-          <ul class="ft_sub">
-            <li>고객서비스</li>
-            <li>자주 묻는 질문</li>
-            <li>고객지원센터</li>
-            <li>피드백</li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">쇼핑하기</a>
-          <ul class="ft_sub">
-            <li>전화주문</li>
-            <li>셀프 프래닝</li>
-            <li>제품 사용 팁/가이드</li>
-            <li>IKEA for Business</li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">서비스</a>
-          <ul class="ft_sub">
-            <li>구매 상담 서비스</li>
-            <li>공간 스타일링 서비스</li>
-            <li>배송 서비스</li>
-            <li>설치 서비스</li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">이케아이야기</a>
-          <ul class="ft_sub">
-            <li>브랜드 소개</li>
-            <li>집에서의 생활</li>
-            <li>지속가능한 생활</li>
-            <li>채용정보</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <div id="footer"></div>
     <script>
       function minus() {
       let num = document.getElementById("num");

@@ -31,83 +31,6 @@ input {
 /* IE10 이상에서 input box 에 추가된 지우기 버튼 제거 */
 input::-ms-clear { display: none; }
 
-/* header */
-header {
-  width: 100%; height: 70px;
-  background-color: #86BA6E;
-}
-header .header_wrap {
-  width: 90%; height: 100%;
-  margin: 0 auto;
-  display: flex; align-items: center;
-}
-header .hd_logo { width: 20%; }
-header nav { width: 60%; height: 100%; display: flex; justify-content: center; }
-header .nav_right { display: flex; justify-content: right; width: 30%; }
-
-/* logo */
-header .hd_logo > a { display: flex; }
-header .hd_logo > a > img { width: 150px; }
-
-/* nav */
-header nav::after {
-  content: '';
-  display: block;
-  width: 100%; height: 0px;
-  background-color: #dbf1da;
-  position: absolute;
-  left: 0; top: 70px;
-  z-index: 100;
-  transition: all 400ms;
-  overflow: hidden;
-}
-header nav.on::after {
-  height: 150px;
-}
-header .gnb { display: flex; width: 100%; height: 100%; padding-left: 100px; box-sizing: border-box; }
-header .gnb .hd_menu { width: 200px; height: 100%; }
-header .gnb .hd_menu:hover > a {
-  text-decoration: underline;
-}
-header .gnb .hd_menu > a {
-  width: 100%; height: 100%;
-  font-size: 16px; color: #fff;
-  display: flex; align-items: center;
-}
-header .lnb {
-  margin-top: 20px;
-  position: relative;
-  z-index: 1000;
-  display: none;
-}
-header .lnb > li { width: 100%; margin-bottom: 15px; }
-header .lnb > li > a { display: block; color: #000; font-size: 15px; }
-header .lnb > li:hover > a { text-decoration: underline; }
-
-/* nav_right */
-header .nav_right .nav_icon { color: #fff; font-size: 27px; }
-header .nav_right .person_icon { font-size: 30px; }
-header .search { display: flex; align-items: center; position: relative; }
-header .search #search_input {
-  width: 270px; height: 40px;
-  background-color: #ffffff6b;
-  border-radius: 20px;
-  padding-left: 20px;
-  padding-right: 70px;
-  box-sizing: border-box;
-}
-header .search .search_btn {
-  width: 29px; height: 29px;
-  position: absolute; right: 20px; top: 6px;
-}
-header .sns { 
-  width: 30%; 
-  display: flex; align-items: center;
-  justify-content: center; 
-  margin-left: 40px;
-}
-header .sns > li { width: 30px; margin: 0px 10px; }
-
 /* 공통 css */
 main .main_wrap {
   padding: 0px 130px;
@@ -193,7 +116,6 @@ main #banner .txt_right {
   width: 100%;
   text-align: left;
 }
-
 main #banner .slide_txt { display: flex; align-items: center; margin: 0 auto; }
 main #banner .slide_txt .txt_left .tit { font-weight: 700; font-size: 28px; }
 main #banner .slide_txt1 .txt_left .tit { color: #CA3F3F; }
@@ -202,7 +124,7 @@ main #banner .slide_txt3 .txt_left .tit { color: #4D8B30; }
 main #banner .slide_txt4 .txt_left .tit { color: #8F38B2; }
 main #banner .slide_txt5 .txt_left .tit { color: #1e5303; }
 main #banner .slide_txt .txt_right .tit { color: #32596D; font-weight: 800; font-size: 26px; }
-main #banner .slide_txt .desc { width: 100%; font-size: 18px; margin-top: 10px; }
+main #banner .slide_txt .desc { width: 100%; font-size: 18px; margin-top: 13px; line-height: 26px; }
 
 /* ikea family */
 main #ikeaFamily {
@@ -424,12 +346,13 @@ main #lowerPrice .lp_slider .scroll-thumb {
   width: 100px; height: 105%;
   background: #111;
   position: absolute;
-  left: 0; bottom: 0;
+  left: 0; bottom: 0; right: 0;
   transition: left 0.1s ease-out;
   cursor: grab;
   z-index: 100;
   position: relative;
   border-radius: 20px;
+  transition: all 3s ease;
 }
 main #lowerPrice .lp_slider .scroll-thumb:active {
   height: 150%;
@@ -437,12 +360,13 @@ main #lowerPrice .lp_slider .scroll-thumb:active {
 }
 
 main #lowerPrice .lp_slider .slider-inner {
-  position: absolute; top: 0; left: 0;
+  position: absolute; top: 0; left: 0; right: 0;
   height: 90%; width: 240%;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 5px;
   align-items: center;
+  transition: all 3s ease;
   /* pointer-events: none; */
 }
 main #lowerPrice .lp_slider .slider-inner .slider-item {
@@ -450,7 +374,7 @@ main #lowerPrice .lp_slider .slider-inner .slider-item {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 main #lowerPrice .lp_slider .slider-inner .slider-item > a {
@@ -491,7 +415,7 @@ main #specialEvent .events {
   justify-content: space-between;
 }
 main #specialEvent .events > li {
-  width: 31%; height: 640px;
+  width: 31%; height: 700px;
   background-color: #D9E1D5;
   border-radius: 20px;
   overflow: hidden;
@@ -501,58 +425,19 @@ main #specialEvent .events .event_img { width: 100%; height: 420px; overflow: hi
 main #specialEvent .events .event_img > img { width: 100%; transition: 0.4s; }
 main #specialEvent .events > li:hover .event_img > img { transform: scale(1.1); }
 
-main #specialEvent .events .txt { padding: 20px; box-sizing: border-box; }
-main #specialEvent .events .txt .tit { font-size: 17px; font-weight: 600; }
-main #specialEvent .events .txt .desc { font-size: 14px; margin-top: 20px; line-height: 25px; }
+main #specialEvent .events .txt { padding: 0px 30px; padding-top: 30px; box-sizing: border-box; }
+main #specialEvent .events .txt .tit { font-size: 22px; font-weight: 500; }
+main #specialEvent .events .txt .desc { font-size: 17px; margin-top: 20px; line-height: 25px; }
 main #specialEvent .events .txt .more {
-  width: 155px; height: 40px;
-  font-size: 14px;
+  width: 160px; height: 40px;
+  font-size: 15px;
   border-radius: 20px;
   background-color: #fff;
-  position: absolute; left: 20px; bottom: 20px;
+  position: absolute; left: 25px; bottom: 25px;
 }
 main #specialEvent .events .txt .more:hover {
   background-color: #000;
 }
 main #specialEvent .events .txt .more:hover > a {
   color: #fff;
-}
-
-/* footer */
-#footer{
-  width: 100%; height: 300px;
-  background-color: #2e2e2e;
-  margin-top: 150px;
-  display: flex; justify-content: space-between;
-}
-#footer .ad_txt{
-  margin-top: 40px;
-  margin-left: 150px;
-  color: rgb(184, 184, 184);
-  line-height: 30px;
-  font-weight: normal;
-  font-size: 14px;
-}
-#footer .ad_txt address {
-  font-style: normal;
-}
-#footer .ad_txt p{
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-weight: normal;
-}
-#footer .right_fnb .fnb{
-  display: flex;
-  margin-right: 150px;
-}
-#footer .right_fnb .fnb>li{
-  margin-top: 45px;
-  margin-left: 40px;
-  font-size: 14px;
-  line-height: 45px;
-  color: rgb(184, 184, 184);;
-}
-#footer .right_fnb .fnb>li>a{
-  color: rgb(202, 202, 202);
-  font-weight: bold;
 }

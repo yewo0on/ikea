@@ -7,8 +7,8 @@ $(document).ready(function() {
     centerPadding: '0px',
     asNavFor: '.slider-for',
     autoplay : true,
-    speed : 1000,
-    autoplaySpeed : 8000,
+    speed : 2000,
+    autoplaySpeed : 2000,
     dots: true,
     arrows : true,
     focusOnSelect: true,
@@ -65,27 +65,10 @@ $(document).ready(function() {
     }
   ]
   });
-
-  // header 서브메뉴 슬라이드
-  $("nav").mouseenter(function() {
-    $(".lnb").stop().slideDown(200);
-    $("nav").addClass("on");
-  });
-  $("nav").mouseleave(function() {
-    $(".lnb").stop().slideUp(100);
-    $("nav").removeClass("on");
-  });
-
-  // header sns 아이콘 클릭 이벤트
-  $(".sns .mypage").click(function() {
-    alert("로그인을 해주세요.");
-  });
-  $(".sns .wishList").click(function() {
-    alert("로그인을 해주세요.");
-  });
-  $(".sns .cart").click(function() {
-    alert("로그인을 해주세요.");
-  });
+  
+  // header, footer 파일 가져오기
+  //$("#header").load("../header.html");
+  //$("#footer").load("../footer.html");
 
   // 카테고리 클릭 이벤트
   $(".category > li").click(function() {
@@ -96,7 +79,6 @@ $(document).ready(function() {
     
     $(".ifproducts_wrap > div").removeClass('on');
     $(".ifproducts_wrap > div").eq(current).addClass('on');
-
   });
 
   // ikeaFamily 더보기 클릭 이벤트

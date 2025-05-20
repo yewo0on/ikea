@@ -3,7 +3,8 @@ const innerSlider = document.querySelector(".slider-inner");
 const scrollbar = document.querySelector('.custom-scrollbar');
 const thumb = document.querySelector('.scroll-thumb');
 
-function checkboundary() { //경계 제한 - 콘텐츠가 왼쪽 끝(0px)보다 더 가거나 오른쪽 끝보다 더 가는 경우 위치를 조정
+/* 슬라이드 기능 구현 */
+function checkboundary() { // 경계 제한 - 콘텐츠가 왼쪽 끝(0px)보다 더 가거나 오른쪽 끝보다 더 가는 경우 위치를 조정
   let outer = slider.getBoundingClientRect();
   let inner = innerSlider.getBoundingClientRect();
   let changed = false;
@@ -18,7 +19,7 @@ function checkboundary() { //경계 제한 - 콘텐츠가 왼쪽 끝(0px)보다 
   if (changed) updateScrollbar();
 }
 
-function updateScrollbar() { //커스텀 스크롤바 동기화
+function updateScrollbar() { // 커스텀 스크롤바 동기화
   const outerWidth = slider.offsetWidth;
   const innerWidth = innerSlider.scrollWidth;
 
@@ -33,11 +34,6 @@ function updateScrollbar() { //커스텀 스크롤바 동기화
 
   thumb.style.left = `${thumbLeft}px`;
 }
-
-window.addEventListener("load", () => {
-  innerSlider.style.left = "0px";
-  updateScrollbar();
-});
 
 window.addEventListener("resize", updateScrollbar);
 
@@ -87,6 +83,7 @@ window.addEventListener("mouseup", () => {
   }
 });
 
+/* 버튼 클릭 시 슬라이드 이동 */
 const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
 const scrollStep = 650; // 버튼 클릭당 이동 거리
@@ -138,14 +135,55 @@ function updateArrowVisibility() {
   }
 }
 
-// 초기 상태 및 리사이즈 시 버튼 보이기 갱신
-window.addEventListener("load", () => {
-  innerSlider.style.left = "0px";
+window.addEventListener("resize", () => {
   updateScrollbar();
   updateArrowVisibility();
 });
 
-window.addEventListener("resize", () => {
+/* 오토 슬라이드 이동 */
+let autoSlideTimer = null;
+let autoSlideDirection = -1; // -1: 오른쪽으로 (콘텐츠를 왼쪽으로), 1: 왼쪽으로 (콘텐츠를 오른쪽으로)
+const autoSlideInterval = 3000; // 3초마다 슬라이드
+
+function autoSlideStep() {
+  const outerWidth = slider.offsetWidth;
+  const innerWidth = innerSlider.scrollWidth;
+  let currentLeft = parseFloat(innerSlider.style.left) || 0;
+  const maxLeft = -(innerWidth - outerWidth);
+
+  // 끝 도달 시 방향 바꾸기
+  if (currentLeft <= maxLeft) {
+    autoSlideDirection = 1;
+  } else if (currentLeft >= 0) {
+    autoSlideDirection = -1;
+  }
+
+  moveSliderBy(autoSlideDirection * scrollStep);
+}
+
+function startAutoSlide() {
+  if (autoSlideTimer) return;
+  autoSlideTimer = setInterval(autoSlideStep, autoSlideInterval);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlideTimer);
+  autoSlideTimer = null;
+}
+
+// 슬라이더에 마우스 올리면 자동 슬라이드 멈춤
+slider.addEventListener("mouseenter", stopAutoSlide);
+slider.addEventListener("mouseleave", startAutoSlide);
+// 슬라이더 버튼에 마우스 올리면 자동 슬라이드 멈춤
+leftArrow.addEventListener("mouseenter", stopAutoSlide);
+leftArrow.addEventListener("mouseleave", startAutoSlide);
+rightArrow.addEventListener("mouseenter", stopAutoSlide);
+rightArrow.addEventListener("mouseleave", startAutoSlide);
+
+// window load 하나로 통합
+window.addEventListener("load", () => {
+  innerSlider.style.left = "0px";
   updateScrollbar();
   updateArrowVisibility();
+  startAutoSlide(); // 오토슬라이드 시작
 });
