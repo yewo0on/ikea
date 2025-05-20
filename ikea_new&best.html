@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IKEA - New & Best</title>
+  <link rel="stylesheet" href="css/ikea_new&best.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <a href="https://www.cursors-4u.com/cursor/2006/02/19/nat120.html" target="_blank" title="Weed - Marijuana"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Weed - Marijuana" style="position:absolute; top: 0px; right: 0px;" /></a>
+    <script>
+  // header 서브메뉴 슬라이드
+  $(document).ready(function(){
+    $("nav").mouseenter(function() {
+      $(".lnb").stop().slideDown(200);
+      $("nav").addClass("on");
+    });
+    $("nav").mouseleave(function() {
+      $(".lnb").stop().slideUp(100);
+      $("nav").removeClass("on");
+    });
+
+    // header sns 아이콘 클릭 이벤트
+    $(".sns .mypage").click(function() {
+      alert("로그인을 해주세요.");
+    });
+    $(".sns .wishList").click(function() {
+      alert("로그인을 해주세요.");
+    });
+    $(".sns .cart").click(function() {
+      alert("로그인을 해주세요.");
+    });
+
+    $(".put_in").click(function(){
+      alert("장바구니에 담겼습니다.")
+    });
+  });
+  </script>
+</head>
+<body>
+  <div id="header">
+    <div class="header_wrap">
+      <h1 class="hd_logo">
+        <a href="index.html"><img src="images/logo.png" alt="IKEA 글자가 써 있는 로고 이미지"></a>
+      </h1>
+      <nav>
+        <ul class="gnb">
+          <li class="hd_menu">
+            <a href="#">모든 제품</a>
+            <ul class="lnb">
+              <li><a href="#">침대/매트리스</a></li>
+              <li><a href="#">소파 및 암체어</a></li>
+              <li><a href="#">수납 가구</a></li>
+            </ul>
+          </li>
+          <li class="hd_menu">
+            <a href="ikea_new&best.html">새로운 제품</a>
+            <ul class="lnb">
+              <li><a href="#">아웃도어/야외용품</a></li>
+              <li><a href="#">가구</a></li>
+              <li><a href="#">침대/매트리스</a></li>
+            </ul>
+          </li>
+          <li class="hd_menu">
+            <a href="ikea_special.html">특별한 가격</a>
+            <ul class="lnb">
+              <li><a href="#">더 낮은 새로운 가격</a></li>
+              <li><a href="#">이달의 IKEA Family</a></li>
+              <li><a href="#">리퍼브 제품 특가</a></li>
+            </ul>
+          </li>
+          <li class="hd_menu">
+            <a href="ikea_idea.html">아이디어</a>
+            <ul class="lnb">
+              <li><a href="#">주제별 홈퍼니싱</a></li>
+              <li><a href="#">공간별 홈퍼니싱</a></li>
+              <li><a href="#">홈퍼니싱 스타일</a></li>
+            </ul>
+          </li>
+          <li class="hd_menu">
+            <a href="#">더 보기</a>
+            <ul class="lnb">
+              <li><a href="#">매장안내</a></li>
+              <li><a href="#">이케아 푸드</a></li>
+              <li><a href="#">IKEA Family 멤버십</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav_right">
+        <form action="" name="search" class="search">
+          <input type="text" name="search_input" id="search_input">
+          <button class="search_btn">
+            <span class="material-symbols-outlined nav_icon">search</span>
+          </button>
+        </form>
+        <ul class="sns">
+          <li class="mypage">
+            <a href="#"><span class="material-symbols-outlined nav_icon person_icon">person</span></a>
+          </li>
+          <li class="wishList">
+            <a href="#"><span class="material-symbols-outlined nav_icon ">heart_plus</span></a>
+          </li>
+          <li class="cart">
+            <a href="#"><span class="material-symbols-outlined nav_icon">shopping_bag</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- ------------------------------------------------------- -->
+  <div id="section">
+    <div class="stock">
+      <div class="left_text">
+        <h1>새로운 제품과 컬렉션</h1>
+        <h4>
+          오늘의 컬렉션, 내일의 클래식.<br>
+          STOCKHOLM 스톡홀름 2025 컬렉션
+        </h4>
+        <p>STOCKHOLM 스톡홀름 컬렉션<br>
+          스웨덴 감성과 디자인 철학, 그리고 세심한 디테일이 어우러져 세월이 지나도 변함없는 아름다움을 선사합니다.<br>
+          이번에 선보이는 제품들도 오랫동안 공간의 가치를 높이며, 집에서 가장 사랑받는 특별한 아이템이 될 것 입니다.<br>
+          어쩌면 세대를 넘어 간직하고 싶은 소중한 가구가 될지도 모르죠!</p>
+      </div>
+      <div class="right_img"><img src="images/new&best/Slice 19 1.png" alt=""></div>
+    </div>
+<!-- ----------------------------------------------------------------------- -->
+      <div class="chiar">
+        <div class="left_img"><img src="images/new&best/chair_outer.png" alt=""></div>
+        <div class="center_img"><img src="images/new&best/sundsoe-folding-chair-light-green-outdoor__1352289_pe952162_s5.png" alt=""></div>
+        <div class="right_text">
+          <div class="right_tit">
+          <h4>new</h4>
+          <h2>SUNDSÖ 순쇠<br>
+            접이식의자, 라이트그린 실외용</h2>
+            <h3>￦39,900</h3>
+            <div class="vote">
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+
+            </div>
+            </div>
+            <div class="line_2"></div>
+            <div class="color_txt"><p>색상선택</p></div>
+            <ul class="chiar_color">
+              <li><a href="#"><img src="images/new&best/sundsoe-folding-chair-dark-blue-outdoor__1352292_pe952168_s5.png" alt=""></a></li>
+              <li><a href="#"><img src="images/new&best/sundsoe-folding-chair-light-green-outdoor__1352289_pe952162_s5.png" alt=""></a></li>
+              <li><a href="#"><img src="images/new&best/sundsoe-folding-chair-bright-yellow-outdoor__1352295_pe952165_s5.png" alt=""></a></li>
+              <li><a href="#"><img src="images/new&best/sundsoe-folding-chair-bright-red-outdoor__1352293_pe952166_s5.png" alt=""></a></li>
+              <li><a href="#"><img src="images/new&best/sundsoe-folding-chair-bright-orange-outdoor__1352290_pe952163_s5.png" alt=""></a></li>
+            </ul>
+            <div class="sell_text">
+            <div class="top_txt">
+              <h4>배송</h4><br>
+              <p>구매기능 여부확인</p>
+            </div>
+            <div class="bottom_txt">
+              <h4>매장구매</h4><br>
+              <p>매장 재고 및 재입고 날짜확인</p>
+            </div>
+            </div>
+            <div class="but">
+              <ul class="butt_namber">
+                <li onclick="minus()">-</li>
+                <li id="num">1</li>
+                <li onclick="plus()">+</li>
+              </ul>
+              <button class="put_in">장바구니에 담기</button>
+            </div>
+        </div>
+      </div>
+<!-- --------------------------------------------------------------- -->
+      <div class="watch">
+        <div class="circle1"></div>
+        <div class="remp_bg"></div>
+        <h4>get <span>new</span> off your</h4>
+        <h2>Deal OF The Day</h2>
+        <div class="lamp_img"></div>
+        <div class="other_img"></div>
+        <ul class="hour">
+          <li><span id="d"></span><br>Days</li>
+          <li><span id="h"></span><br>hours</li>
+          <li><span id="m"></span><br>mins</li>
+          <li><span id="s"></span><br>secs</li>
+        </ul>
+        <button class="watch_bt"><a href="#">button</a></button>
+        <div class="chiar_bg"></div>
+                <div class="circle2"></div>
+      </div>
+
+
+      <div class="best_ti">
+      <h1>Best Sellers</h1>
+      </div>
+
+      <div class="best">
+        <ul class="best_sel">
+          <li>
+            <div class="img_line">
+            <img src="images/new&best/tingby-side-table-on-castors-white__0441842_pe593578_s5.png" alt="">
+            </div>
+            <div class="best_txt">
+            <p>
+              <span>TINGBY 팅뷔</span> <br>
+              <h4>￦44,900</h4><br>
+              이동식 보조테이블,<br>화이트,50x50 cm
+            </p>
+            </div>
+          </li>
+          <li>
+            <div class="img_line">
+            <img src="images/new&best/poaeng-armchair-birch-veneer-knisa-light-beige__0571500_pe666933_s5.png" alt="">
+            </div>
+              <div class="best_txt">
+              <p>
+              <span>POÄNG 포엥</span><br>
+              <h4>￦89,900</h4><br>
+              암체어, 자작나무무늬목/<br>크니사 라이트베이지
+            </p>
+            </div>
+            
+          </li>
+          <li>
+            <div class="img_line">
+            <img src="images/new&best/kolbjoern-cabinet-in-outdoor-beige__0664606_pe718444_s5.png" alt="">
+            </div>
+            <div class="best_txt">
+            <p>
+              <span>KOLBJÖRN 콜비에른</span><br>
+              <h4>￦107,000</h4><br>
+              수납장, 실내외겸용,<br>
+              베이지, 80x81 cm
+            </p>
+            </div>
+          </li>
+          <li>
+            <div class="img_line">
+            <img src="images/new&best/dejsa-table-lamp-beige-opal-white-glass__0967540_pe810183_s5.png" alt="">
+            </div>
+            <div class="best_txt">
+            <p>
+              <span>DEJSA 데이사</span><br>
+              <h4>￦59,900</h4><br>
+              탁상스탠드, 베이지/<br>화이트 유리, 28 cm
+            </p>
+            </div>
+          </li>
+        </ul>
+      <div class="bed_img"><img src="images/new&best/songesand-bed-frame-with-2-storage-boxes-white-luroey__1101573_pe866679_s5.png" alt=""></div>
+    </div>
+  </div>
+  <!-- --------------------------------------------------------------- -->
+  <div id="footer">
+    <div class="ad_txt">
+      <address>이케아코리아 유한회사<br>
+        주소: (우) 14352 경기도 광명시 일직로 17, 1층(일직동) 이케아 광명점<br>
+        사업자 등록번호: 106-86-82871 사업자정보확인<br>
+        대표자: 이사벨 푸치 팔렘<br>
+        통신판매업 신고: 2018-경기광명-0209<br>
+        고객지원센터: 1670-4532</address>
+      <p>© Inter IKEA Systems B.V 1999-2025</p>
+    </div>
+    <div class="right_fnb">
+      <ul class="fnb">
+        <li>
+          <a href="#">고객문의</a>
+          <ul class="ft_sub">
+            <li>고객서비스</li>
+            <li>자주 묻는 질문</li>
+            <li>고객지원센터</li>
+            <li>피드백</li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">쇼핑하기</a>
+          <ul class="ft_sub">
+            <li>전화주문</li>
+            <li>셀프 프래닝</li>
+            <li>제품 사용 팁/가이드</li>
+            <li>IKEA for Business</li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">서비스</a>
+          <ul class="ft_sub">
+            <li>구매 상담 서비스</li>
+            <li>공간 스타일링 서비스</li>
+            <li>배송 서비스</li>
+            <li>설치 서비스</li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">이케아이야기</a>
+          <ul class="ft_sub">
+            <li>브랜드 소개</li>
+            <li>집에서의 생활</li>
+            <li>지속가능한 생활</li>
+            <li>채용정보</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+    <script>
+      function minus() {
+      let num = document.getElementById("num");
+      let num1 = parseInt(num.innerText);
+      if ( num1 > 1 ) {
+        num.innerText = parseInt(num.innerText) - 1;
+      }
+    }
+    function plus() {
+      let num = document.getElementById("num");
+      num.innerText = parseInt(num.innerText) + 1;
+    }
+      function dates() {
+    let now = new Date();
+    let newYear = new Date('may 30, ' + (now.getFullYear()));
+    let diff = newYear - now;
+    let milliseconds = Math.floor(diff % 1000);
+    diff = diff / 1000;
+    let seconds = Math.floor(diff % 60);
+    diff = diff / 60;
+    let minutes = Math.floor(diff % 60);
+    diff = diff / 60;
+    let hours = Math.floor(diff % 24);
+    diff = diff / 24;
+    let days = Math.floor(diff);
+    
+    document.getElementById("d").innerHTML = days;
+    document.getElementById("h").innerHTML = hours;
+    document.getElementById("m").innerHTML = minutes;
+    document.getElementById("s").innerHTML = seconds;
+
+    setTimeout("dates()", 1000);
+  }
+  dates();
+
+  document.querySelectorAll('.star').forEach(($star) => {
+  $star.addEventListener('click', ({ target }) => {
+    // 모든 .star에서 .active 삭제
+    document.querySelectorAll('.star').forEach(($star) => {
+      $star.classList.remove('active');
+    });
+
+    // 클릭한 .star에 .active 추가
+    target.classList.add('active');
+  });
+});
+    </script>
+</body>
+</html>
