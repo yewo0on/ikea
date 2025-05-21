@@ -1,30 +1,36 @@
-function includeHTML(){
-  let z, elmnt, file, xhttp;
+function includeHTML() {
+  const includes = document.querySelectorAll('[data-include]');
 
-  z = document.getElementsByTagName("*");
+  includes.forEach(el => {
+    const file = el.getAttribute('data-include');
+    if (file) {
+      fetch(file)
+        .then(response => {
+          if (!response.ok) throw new Error(`Failed to load ${file}`);
+          return response.text();
+        })
+        .then(html => {
+          el.innerHTML = html;
 
-  for (let i = 0; i < z.length; i++) {
-  elmnt = z[i];
-  file = elmnt.getAttribute("data-include");
+          // 삽입 후 script 태그들을 수동으로 로드
+          const scripts = el.querySelectorAll('script');
+          scripts.forEach(script => {
+            const newScript = document.createElement('script');
+            if (script.src) {
+              newScript.src = script.src;
+              newScript.async = false;
+            } else {
+              newScript.textContent = script.textContent;
+            }
+            script.parentNode.replaceChild(newScript, script);
+          });
+        })
+        .catch(err => {
+          console.error(err);
+          el.innerHTML = "<p>Failed to load content.</p>";
+        });
+    }
+  });
+}
 
-  if (file) {
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-    if (this.readyState == 4) {
-  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-  /* Remove the attribute, and call this function once more: */
-  elmnt.removeAttribute("data-include");
-  includeHTML();
-    }//if
-  }//onreadystatechange
-  xhttp.open("GET", file, true);
-  xhttp.send();
-    return;
-  }//if - file
-  }//for
-}//includeHTML
-
-window.addEventListener('DOMContentLoaded',()=>{
-  includeHTML();
-});
+document.addEventListener('DOMContentLoaded', includeHTML);

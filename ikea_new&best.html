@@ -8,42 +8,17 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon" />
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <a href="https://www.cursors-4u.com/cursor/2006/02/19/nat120.html" target="_blank" title="Weed - Marijuana"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Weed - Marijuana" style="position:absolute; top: 0px; right: 0px;" /></a>
-    <script>
-  // header 서브메뉴 슬라이드
-  $(document).ready(function(){
-    // header, footer 파일 가져오기
-    $("#header").load("../header.html");
-    $("#footer").load("../footer.html");
-
-    $("nav").mouseenter(function() {
-      $(".lnb").stop().slideDown(200);
-      $("nav").addClass("on");
+  <script src="js/include.js" defer></script>
+  <script>
+    $(document).ready(function(){
+      $(".put_in").click(function(){
+        alert("장바구니에 담겼습니다.")
+      });
     });
-    $("nav").mouseleave(function() {
-      $(".lnb").stop().slideUp(100);
-      $("nav").removeClass("on");
-    });
-
-    // header sns 아이콘 클릭 이벤트
-    $(".sns .mypage").click(function() {
-      alert("로그인을 해주세요.");
-    });
-    $(".sns .wishList").click(function() {
-      alert("로그인을 해주세요.");
-    });
-    $(".sns .cart").click(function() {
-      alert("로그인을 해주세요.");
-    });
-
-    $(".put_in").click(function(){
-      alert("장바구니에 담겼습니다.")
-    });
-  });
   </script>
 </head>
 <body>
-  <div id="header"></div>
+  <div id="header" data-include="header.html"></div>
   <!-- ------------------------------------------------------- -->
   <div id="section">
     <div class="stock">
@@ -189,7 +164,7 @@
     </div>
   </div>
   <!-- --------------------------------------------------------------- -->
-  <div id="footer"></div>
+  <div id="footer" data-include="footer.html"></div>
     <script>
       function minus() {
       let num = document.getElementById("num");

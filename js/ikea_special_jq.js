@@ -7,7 +7,7 @@ $(document).ready(function() {
     centerPadding: '0px',
     asNavFor: '.slider-for',
     autoplay : true,
-    speed : 2000,
+    speed : 1500,
     autoplaySpeed : 2000,
     dots: true,
     arrows : true,
